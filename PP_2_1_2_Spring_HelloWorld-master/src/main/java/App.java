@@ -6,20 +6,20 @@ public class App {
         ApplicationContext applicationContext =
                 new AnnotationConfigApplicationContext(AppConfig.class);
 
-        HelloWorld bean =
+        HelloWorld worldBean =
                 (HelloWorld) applicationContext.getBean("helloworld");
-        System.out.println(bean.getMessage());
+        System.out.println(worldBean.getMessage());
 
-        HelloWorld bean2 =
+        HelloWorld worldBean2 =
                 (HelloWorld) applicationContext.getBean("helloworld");
 
-        Cat cat = (Cat) applicationContext.getBean("cat");
-        System.out.println(cat.getName());
+        Cat catBean = (Cat) applicationContext.getBean("cat");
+        System.out.println(catBean.getName());
 
-        Cat cat2 = (Cat) applicationContext.getBean("cat");
+        Cat catBean2 = (Cat) applicationContext.getBean("cat");
 
-        System.out.println(bean == bean2);
-        System.out.println(cat == cat2);
+        System.out.println(worldBean == worldBean2);
+        System.out.println(catBean == catBean2);
 
     }
 }
